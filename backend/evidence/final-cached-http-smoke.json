@@ -1,0 +1,42 @@
+{
+  "fresh_environment": true,
+  "network": "localhost only; no IRSA calls in this rehearsal",
+  "checks": [
+    {
+      "path": "/health",
+      "status": 200
+    },
+    {
+      "path": "/v1/targets",
+      "status": 200
+    },
+    {
+      "path": "/docs",
+      "status": 200
+    },
+    {
+      "path": "/openapi.json",
+      "status": 200
+    },
+    {
+      "path": "/v1/cutouts/e3a440b1023a5200908226705840183d/preview.png",
+      "status": 200,
+      "bytes": 369
+    },
+    {
+      "path": "/v1/cutouts/e3a440b1023a5200908226705840183d/source.fits",
+      "status": 200,
+      "bytes": 5060160
+    },
+    {
+      "path": "/v1/cutouts/a73d0dc77ac55c24b369e1a0e88c6edf/preview.png",
+      "status": 200,
+      "bytes": 352
+    },
+    {
+      "path": "/v1/cutouts/a73d0dc77ac55c24b369e1a0e88c6edf/source.fits",
+      "status": 200,
+      "bytes": 5063040
+    }
+  ]
+}
