@@ -19,7 +19,9 @@ import { WISE_0855_FIXTURE_RECORDS, FIXTURE_PREVIEW_PATH } from '../data/fixture
 export const API_BASE_URL =
   import.meta.env.VITE_API_BASE_URL?.replace(/\/$/, '') || 'http://127.0.0.1:8765';
 
-export const DEFAULT_COLLECTION = 'spherex_qr2';
+// IRSA made QR2 unsearchable via SIA2 in Nov 2026 ("DR1 and QR3 together supersede QR2").
+// QR2 files stay downloadable until Feb 2027, so the cached QR2 offline fixture still works.
+export const DEFAULT_COLLECTION = 'spherex_dr1';
 export const MAX_RADIUS_DEG = 0.05;
 export const DEFAULT_CUTOUT_SIZE_DEG = 0.03;
 
