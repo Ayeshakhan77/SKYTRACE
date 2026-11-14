@@ -202,3 +202,16 @@ def test_cutout_byte_limit(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> N
         irsa.download_cutout(SOURCE, 133.7, -7.2, 0.03, tmp_path / "cutout.fits")
     assert error.value.code == "cutout_too_large"
     assert not list(tmp_path.iterdir())
+
+
+# IRSA made QR2 unsearchable via SIA2 (superseded by DR1 + QR3, Nov 2026).
+DR1_SOURCE = ("https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W19_1B/"
+              "l2b-v27-2026-197/3/level2_2025W19_1B_0116_1D3_spx_l2b-v27-2026-197.fits")
+
+
+def test_allow_dr1_source_and_collection() -> None:
+    assert irsa.validate_source_url(DR1_SOURCE) == DR1_SOURCE
+    assert "spherex_dr1" in irsa.COLLECTIONS
+    with pytest.raises(irsa.IRSAError) as error:
+        irsa.validate_source_url(DR1_SOURCE.replace("/dr1/", "/dr9/"))
+    assert error.value.code == "unsafe_source_url"
