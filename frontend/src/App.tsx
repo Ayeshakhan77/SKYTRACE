@@ -124,7 +124,7 @@ export default function App() {
       <footer className="border-t border-borderCol bg-cardBg/50 px-6 py-3 text-[11px] font-mono text-gray-500 flex flex-wrap items-center justify-between gap-2">
         <span>NASA Space Apps Challenge 2026 • Planet X & SPHEREx</span>
         <span>
-          Visual exploration tool only — unassessed checks do not constitute scientific discovery claims[cite: 2].
+          Visual exploration tool only — unassessed checks do not constitute scientific discovery claims.
         </span>
       </footer>
     </div>

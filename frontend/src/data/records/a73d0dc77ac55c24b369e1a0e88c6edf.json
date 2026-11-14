@@ -1,0 +1,347 @@
+{
+  "schema_version": "0.1",
+  "cutout_id": "a73d0dc77ac55c24b369e1a0e88c6edf",
+  "search_id": "ae25b7204ad740579de50a6da78d0755",
+  "query_position": {
+    "ra_deg": 133.7951291667,
+    "dec_deg": -7.2451472222
+  },
+  "size_deg": 0.03,
+  "source": {
+    "observation_id": "1a005be8a9d9ddcb7e5f9555",
+    "source_product_id": "ivo://irsa.ipac/spherex_qr2?2026W19_1A_0594_2/D1",
+    "source_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2026W19_1A/l2b-v24-2026-131/1/level2_2026W19_1A_0594_2D1_spx_l2b-v24-2026-131.fits",
+    "collection": "spherex_qr2",
+    "mjd_start": 61165.590143,
+    "mjd_end": 61165.591475,
+    "wavelength_min_m": 7.455e-7,
+    "wavelength_max_m": 1.1167e-6,
+    "bandpass_name": "SPHEREx-D1",
+    "metadata": {
+      "s_ra": 134.14935753972202,
+      "s_dec": -7.899854778357191,
+      "facility_name": "SPHEREx",
+      "instrument_name": "SPHEREx",
+      "dataproduct_subtype": "science",
+      "calib_level": 2,
+      "dataproduct_type": "image",
+      "energy_bandpassname": "SPHEREx-D1",
+      "energy_emband": "Infrared",
+      "obs_id": "2026W19_1A_0594_2",
+      "s_resolution": 3.075,
+      "em_min": 7.455e-7,
+      "em_max": 1.1167e-6,
+      "em_res_power": 39.1,
+      "proposal_title": "SPHEREx LVF Survey Data",
+      "access_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2026W19_1A/l2b-v24-2026-131/1/level2_2026W19_1A_0594_2D1_spx_l2b-v24-2026-131.fits",
+      "access_format": "image/fits",
+      "access_estsize": 71638,
+      "t_exptime": 113.5826,
+      "s_region": "POLYGON ICRS 133.1067013398072 -5.725597879920737 136.42160254148538 -6.832517096694966 135.19697485994277 -10.099229954401133 131.82885928308713 -8.977451662484015 133.1067013398072 -5.725597879920737",
+      "obs_collection": "spherex_qr2",
+      "obs_intent": "science",
+      "algorithm_name": "exposure",
+      "facility_keywords": "",
+      "instrument_keywords": "",
+      "environment_photometric": null,
+      "proposal_id": "",
+      "proposal_pi": "",
+      "proposal_project": "SPHEREx",
+      "target_name": "SPS_117707",
+      "target_type": "field",
+      "target_standard": false,
+      "target_moving": false,
+      "target_keywords": "",
+      "obs_release_date": "2026-06-15 20:39:04",
+      "s_xel1": 2040,
+      "s_xel2": 2040,
+      "s_pixel_scale": 6.15,
+      "position_timedependent": false,
+      "t_min": 61165.590143,
+      "t_max": 61165.591475,
+      "t_resolution": null,
+      "t_xel": null,
+      "obs_publisher_did": "ivo://irsa.ipac/spherex_qr2?2026W19_1A_0594_2/D1",
+      "s_fov": 3.485,
+      "em_xel": null,
+      "pol_states": "",
+      "pol_xel": null,
+      "cloud_access": "{\"aws\": {\"bucket_name\": \"nasa-irsa-spherex\", \"key\":\"qr2/level2/2026W19_1A/l2b-v24-2026-131/1/level2_2026W19_1A_0594_2D1_spx_l2b-v24-2026-131.fits\", \"region\": \"us-east-1\"}}",
+      "o_ucd": "",
+      "upload_row_id": 1
+    }
+  },
+  "retrieval": {
+    "url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2026W19_1A/l2b-v24-2026-131/1/level2_2026W19_1A_0594_2D1_spx_l2b-v24-2026-131.fits?center=133.7951291667%2C-7.2451472222&size=0.030000",
+    "byte_count": 5063040,
+    "sha256": "f9b27c04d5d00169b4f3dfb16a3720793fa4cef6818b2f3f62bb9e95a351bc76",
+    "retrieved_at_utc": "2026-11-03T12:05:04+00:00"
+  },
+  "inspection": {
+    "image": {
+      "width": 18,
+      "height": 18,
+      "unit": "MJy / sr",
+      "image_extension": "IMAGE"
+    },
+    "observation_time": {
+      "date_obs": "2026-05-05T14:09:48.337",
+      "date_end": "2026-05-05T14:11:43.455",
+      "source_field": "IMAGE.DATE-OBS",
+      "end_source_field": "IMAGE.DATE-END",
+      "time_system": "UTC",
+      "time_system_source_field": "IMAGE.TIMESYS",
+      "status": "header_value"
+    },
+    "spatial": {
+      "has_celestial_wcs": true,
+      "query_pixel_x": 8.139055365766886,
+      "query_pixel_y": 8.054996141688335,
+      "query_position_within_cutout": true,
+      "alignment_status": "not_assessed"
+    },
+    "wavelength": {
+      "target_center_um": 0.9629694281374138,
+      "target_bandwidth_um": 0.02471831065589413,
+      "status": "spectral_wcs_evaluated",
+      "reason": "WCS W evaluated at the fixed query position, using declared axis units.",
+      "position_basis": "fixed_query_position"
+    },
+    "quality": {
+      "status": "not_assessed",
+      "nonfinite_fraction": 0.0,
+      "flags_present": true,
+      "nonzero_flag_fraction": 0.4104938271604938,
+      "flag_counts": [
+        {
+          "name": "MP_TRANSIENT",
+          "bit": 0,
+          "count": 2,
+          "description": "Transient detected during SUR"
+        },
+        {
+          "name": "MP_OVERFLOW",
+          "bit": 1,
+          "count": 0,
+          "description": "Overflow detected during SUR"
+        },
+        {
+          "name": "MP_SUR_ERROR",
+          "bit": 2,
+          "count": 2,
+          "description": "Error in onboard processing"
+        },
+        {
+          "name": "MP_PHANTOM",
+          "bit": 4,
+          "count": 0,
+          "description": "Phantom pixel"
+        },
+        {
+          "name": "MP_REFERENCE",
+          "bit": 5,
+          "count": 0,
+          "description": "Reference pixel"
+        },
+        {
+          "name": "MP_NONFUNC",
+          "bit": 6,
+          "count": 2,
+          "description": "Permanently unusable"
+        },
+        {
+          "name": "MP_DICHROIC",
+          "bit": 7,
+          "count": 0,
+          "description": "Low efficiency due to dichroic"
+        },
+        {
+          "name": "MP_MISSING_DATA",
+          "bit": 9,
+          "count": 0,
+          "description": "Onboard data lost"
+        },
+        {
+          "name": "MP_HOT",
+          "bit": 10,
+          "count": 0,
+          "description": "Hot pixel"
+        },
+        {
+          "name": "MP_COLD",
+          "bit": 11,
+          "count": 1,
+          "description": "Anomalously low signal"
+        },
+        {
+          "name": "MP_FULLSAMPLE",
+          "bit": 12,
+          "count": 0,
+          "description": "Pixel full sample history is available"
+        },
+        {
+          "name": "MP_PHANMISS",
+          "bit": 14,
+          "count": 0,
+          "description": "Phantom correction was not applied"
+        },
+        {
+          "name": "MP_NONLINEAR",
+          "bit": 15,
+          "count": 0,
+          "description": "Nonlinearity correction cannot be applied reliably"
+        },
+        {
+          "name": "MP_PERSIST",
+          "bit": 17,
+          "count": 1,
+          "description": "Persistent charge above threshold"
+        },
+        {
+          "name": "MP_OUTLIER",
+          "bit": 19,
+          "count": 8,
+          "description": "Pixel flagged by Detect Outliers"
+        },
+        {
+          "name": "MP_SOURCE",
+          "bit": 21,
+          "count": 116,
+          "description": "Pixel mapped to a known source"
+        },
+        {
+          "name": "MP_GHOST",
+          "bit": 22,
+          "count": 0,
+          "description": "Affected by a bright source inside the exposure"
+        },
+        {
+          "name": "MP_GHOST_FPA",
+          "bit": 23,
+          "count": 0,
+          "description": "Affected by a bright source on another detector"
+        },
+        {
+          "name": "MP_GHOST_EXT",
+          "bit": 24,
+          "count": 0,
+          "description": "Pixel affected by a bright source outside FOV"
+        },
+        {
+          "name": "MP_BLOOM",
+          "bit": 26,
+          "count": 0,
+          "description": "Pixel part of a bloom artifact"
+        },
+        {
+          "name": "MP_SNOWBALL",
+          "bit": 27,
+          "count": 0,
+          "description": "Pixel part of a snowball artifact"
+        },
+        {
+          "name": "MP_HALO",
+          "bit": 28,
+          "count": 6,
+          "description": "Pixel part of a transient halo"
+        }
+      ],
+      "variance": {
+        "present": true,
+        "unit": "MJy2 / sr2",
+        "nonfinite_fraction": 0.0,
+        "negative_fraction": 0.0
+      }
+    },
+    "extensions": [
+      {
+        "index": 0,
+        "name": "PRIMARY",
+        "kind": "PrimaryHDU",
+        "shape": null
+      },
+      {
+        "index": 1,
+        "name": "IMAGE",
+        "kind": "ImageHDU",
+        "shape": [
+          18,
+          18
+        ]
+      },
+      {
+        "index": 2,
+        "name": "FLAGS",
+        "kind": "ImageHDU",
+        "shape": [
+          18,
+          18
+        ]
+      },
+      {
+        "index": 3,
+        "name": "VARIANCE",
+        "kind": "ImageHDU",
+        "shape": [
+          18,
+          18
+        ]
+      },
+      {
+        "index": 4,
+        "name": "ZODI",
+        "kind": "ImageHDU",
+        "shape": [
+          18,
+          18
+        ]
+      },
+      {
+        "index": 5,
+        "name": "PSF",
+        "kind": "ImageHDU",
+        "shape": [
+          121,
+          101,
+          101
+        ]
+      },
+      {
+        "index": 6,
+        "name": "WCS-WAVE",
+        "kind": "BinTableHDU",
+        "shape": null
+      }
+    ],
+    "display": {
+      "mode": "per_image_asinh",
+      "percentile_low": 1,
+      "percentile_high": 99,
+      "value_low": 0.1857227036356926,
+      "value_high": 2.1387856966256797,
+      "origin": "lower",
+      "nonfinite_pixels_displayed_as": 0,
+      "brightness_comparison_validated": false
+    },
+    "warnings": [
+      "This is a display-only preview; the source FITS remains the scientific data product.",
+      "The query is a fixed sky position; object identity and proper-motion tracking have not been confirmed.",
+      "WCS alignment, PSF matching, spectral compatibility and photometric comparison have not been assessed.",
+      "The display stretch is per image; preview brightness must not be used to measure changes.",
+      "Flag counts describe the raw bitmask. A nonzero flag is not automatically an unusable pixel; SOURCE and other flags have different meanings.",
+      "Image quality has not been approved for scientific comparison; flags and variance require interpretation."
+    ]
+  },
+  "assets": {
+    "original_fits_url": "/v1/cutouts/a73d0dc77ac55c24b369e1a0e88c6edf/source.fits",
+    "preview_png_url": "/v1/cutouts/a73d0dc77ac55c24b369e1a0e88c6edf/preview.png",
+    "sha256": "f9b27c04d5d00169b4f3dfb16a3720793fa4cef6818b2f3f62bb9e95a351bc76",
+    "byte_count": 5063040
+  },
+  "comparison_status": "not_assessed",
+  "limitations": [
+    "A preview is a display rendering, not a new measurement or object identification.",
+    "No cross-image registration, PSF matching, photometric comparison or motion detection was performed.",
+    "Broad archive wavelength bounds do not prove the same band at the target position."
+  ]
+}

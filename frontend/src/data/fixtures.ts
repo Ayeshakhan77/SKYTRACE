@@ -1,4 +1,4 @@
-import { NormalizedObservation, TargetPreset } from '../types/observation';
+import { TargetPreset } from '../types/observation';
 
 export const CURATED_TARGETS: TargetPreset[] = [
   {
@@ -53,48 +53,14 @@ export const CURATED_TARGETS: TargetPreset[] = [
   },
 ];
 
-// Official cached WISE 0855 QR2 D1 pair for offline UI & Change Receipt testing
-export const WISE_0855_FIXTURE: NormalizedObservation[] = [
-  {
-    backendSelectionKey: 'a94f82c10e7b3d5918f02c4a',
-    archiveObservationId: 'SPX_QR2_D1_20250514_001',
-    sourceProductId: 'spherex_qr2_d1_20250514T081200Z_b1',
-    searchId: 'srch_wise0855_offline_01',
-    observationTime: '2025-05-14T08:12:00Z',
-    wavelength: 0.98,
-    bandwidth: 0.36,
-    detector: 'D1 (H2RG-1)',
-    processingVersion: null, // Explicitly null per contract (never parsed from URL)
-    previewUrl: 'https://images-assets.nasa.gov/image/PIA15415/PIA15415~medium.jpg',
-    fitsUrl: '/assets/fits/spherex_qr2_d1_20250514.fits',
-    previewStatus: 'available',
-    fitsStatus: 'available',
-    provenance: {
-      sourceUrl: 'https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/d1/20250514.fits',
-      checksum: 'sha256:a94f82c10e7b3d5918f02c4a991b8e22...',
-      collection: 'QR2 D1',
-    },
-    qualityStatus: 'not_assessed',
-  },
-  {
-    backendSelectionKey: 'f31d90e47b2a6c8140e95d1b',
-    archiveObservationId: 'SPX_QR2_D1_20260519_042',
-    sourceProductId: 'spherex_qr2_d1_20260519T144500Z_b2',
-    searchId: 'srch_wise0855_offline_01',
-    observationTime: '2026-05-19T14:45:00Z',
-    wavelength: 1.34,
-    bandwidth: 0.52,
-    detector: 'D1 (H2RG-1)',
-    processingVersion: null,
-    previewUrl: 'https://images-assets.nasa.gov/image/PIA17563/PIA17563~medium.jpg',
-    fitsUrl: '/assets/fits/spherex_qr2_d1_20260519.fits',
-    previewStatus: 'available',
-    fitsStatus: 'available',
-    provenance: {
-      sourceUrl: 'https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/d1/20260519.fits',
-      checksum: 'sha256:f31d90e47b2a6c8140e95d1b774c1a09...',
-      collection: 'QR2 D1',
-    },
-    qualityStatus: 'not_assessed',
-  },
-];
+// Real cached WISE 0855 QR2/D1 cutout records, copied verbatim from the backend's
+// examples/cache/cutouts/*/record.json (retrieved from IRSA on 3 Nov 2026).
+// Previews are the backend-generated PNGs, served from frontend/public/fixtures/.
+// Use for offline UI and Change Receipt testing only — NOT evidence of change:
+// different processing versions (v20 vs v24), different local wavelengths,
+// per-image display scaling, alignment/PSF/photometry not assessed.
+import record2025 from './records/e3a440b1023a5200908226705840183d.json';
+import record2026 from './records/a73d0dc77ac55c24b369e1a0e88c6edf.json';
+
+export const WISE_0855_FIXTURE_RECORDS: any[] = [record2025, record2026];
+export const FIXTURE_PREVIEW_PATH = (cutoutId: string) => `/fixtures/${cutoutId}.png`;
