@@ -18,7 +18,7 @@ import numpy as np
 from astropy.io.votable import parse
 
 SIA_URL = "https://irsa.ipac.caltech.edu/SIA"
-COLLECTIONS = frozenset({"spherex_qr2", "spherex_qr2_deep", "spherex_qr3", "spherex_qr3_deep"})
+COLLECTIONS = frozenset({"spherex_dr1", "spherex_dr1_deep", "spherex_qr2", "spherex_qr2_deep", "spherex_qr3", "spherex_qr3_deep"})
 MAX_METADATA_BYTES = 10 * 1024 * 1024
 MAX_CUTOUT_BYTES = 32 * 1024 * 1024
 TIMEOUT = httpx.Timeout(60.0, connect=15.0, pool=10.0)
@@ -75,8 +75,8 @@ def validate_source_url(source_url: str) -> str:
     ):
         raise IRSAError("unsafe_source_url", "Source must be a public IRSA SPHEREx FITS URL.")
     pieces = parsed.path.split("/")
-    if len(pieces) < 8 or pieces[4] not in {"qr2", "qr3"} or pieces[5] != "level2":
-        raise IRSAError("unsafe_source_url", "Source must be an IRSA QR2/QR3 level2 product.")
+    if len(pieces) < 8 or pieces[4] not in {"dr1", "qr2", "qr3"} or pieces[5] != "level2":
+        raise IRSAError("unsafe_source_url", "Source must be an IRSA DR1/QR2/QR3 level2 product.")
     return source_url
 
 
