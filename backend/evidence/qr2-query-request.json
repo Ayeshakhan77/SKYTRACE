@@ -1,0 +1,10 @@
+{
+  "url": "https://irsa.ipac.caltech.edu/SIA?COLLECTION=spherex_qr2&POS=circle+133.7951291667+-7.2451472222+0.01&RESPONSEFORMAT=VOTABLE",
+  "status_code": 200,
+  "params": {
+    "COLLECTION": "spherex_qr2",
+    "POS": "circle 133.7951291667 -7.2451472222 0.01",
+    "RESPONSEFORMAT": "VOTABLE"
+  },
+  "bytes": 561064
+}

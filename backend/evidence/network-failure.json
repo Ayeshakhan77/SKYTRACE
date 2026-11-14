@@ -1,0 +1,12 @@
+{
+  "recorded_at_utc": "2026-11-03T12:06:12+00:00",
+  "event": "A repeated live CLI metadata query succeeded for QR3 with zero rows, then the QR2 request failed at HTTPX transport level. The earlier QR2 request had succeeded and its raw response was retained.",
+  "terminal_error_exact": "archive_unavailable: Could not reach the IRSA archive.",
+  "process_exit_code": 1,
+  "http_status_for_failed_request": null,
+  "underlying_httpx_error_subtype": "Not captured by the CLI; do not infer timeout or HTTP error.",
+  "recovery": "Parsed the earlier successful saved QR2 VOTable and performed two live cutout downloads. Capture timestamps are explicitly marked as raw-response file modification times.",
+  "successful_qr2_raw_response": "qr2-query-response.xml",
+  "successful_qr2_request": "qr2-query-request.json",
+  "followup_live_cutout_result": "retrieval.json"
+}

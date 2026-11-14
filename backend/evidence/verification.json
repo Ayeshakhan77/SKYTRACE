@@ -1,0 +1,40 @@
+{
+  "completed_at_utc": "2026-11-03T12:30:51+00:00",
+  "scope": "user_authorized_live_IRSA_test_and_local_backend",
+  "target": "WISE 0855 fixed official challenge coordinates",
+  "ra_deg": 133.7951291667,
+  "dec_deg": -7.2451472222,
+  "qr3_rows": 0,
+  "qr2_rows": 256,
+  "fits_downloads": 2,
+  "previews_generated": 2,
+  "actual_image_dimensions": [
+    18,
+    18
+  ],
+  "wavelength_at_fixed_position_um": [
+    0.9936670117685139,
+    0.9629694281374138
+  ],
+  "target_identity_verified": false,
+  "proper_motion_propagated": false,
+  "images_registered": false,
+  "scientific_comparison_ready": false,
+  "local_backend_implemented": true,
+  "live_http_search_passed": true,
+  "live_http_cutout_and_assets_passed": true,
+  "live_http_assets_verified": 1,
+  "fresh_install_cached_assets_verified": 2,
+  "tests_passed": 75,
+  "independent_reviews": [
+    "general",
+    "Python",
+    "security"
+  ],
+  "upstream_transport_failures_preserved": true,
+  "discord_accessed": false,
+  "messages_sent": 0,
+  "deployed": false,
+  "repo_created_or_pushed": false,
+  "temporary_servers_stopped": true
+}

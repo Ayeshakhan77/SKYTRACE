@@ -1,0 +1,1187 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "SKYTRACE local prototype",
+    "description": "Public IRSA retrieval and honest previews; no discovery/classification service.",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Health",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Health Health Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/targets": {
+      "get": {
+        "summary": "Targets",
+        "operationId": "targets_v1_targets_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Targets V1 Targets Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/searches": {
+      "post": {
+        "summary": "Search",
+        "operationId": "search_v1_searches_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchRecord"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/searches/{search_id}": {
+      "get": {
+        "summary": "Get Search",
+        "operationId": "get_search_v1_searches__search_id__get",
+        "parameters": [
+          {
+            "name": "search_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Search Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchRecord"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/searches/{search_id}/cutouts": {
+      "post": {
+        "summary": "Prepare",
+        "operationId": "prepare_v1_searches__search_id__cutouts_post",
+        "parameters": [
+          {
+            "name": "search_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Search Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PrepareRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PreparedObservation"
+                  },
+                  "title": "Response Prepare V1 Searches  Search Id  Cutouts Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/cutouts/{cutout_id}": {
+      "get": {
+        "summary": "Get Cutout",
+        "operationId": "get_cutout_v1_cutouts__cutout_id__get",
+        "parameters": [
+          {
+            "name": "cutout_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Cutout Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PreparedObservation"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/cutouts/{cutout_id}/preview.png": {
+      "get": {
+        "summary": "Preview",
+        "operationId": "preview_v1_cutouts__cutout_id__preview_png_get",
+        "parameters": [
+          {
+            "name": "cutout_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Cutout Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/cutouts/{cutout_id}/source.fits": {
+      "get": {
+        "summary": "Source File",
+        "operationId": "source_file_v1_cutouts__cutout_id__source_fits_get",
+        "parameters": [
+          {
+            "name": "cutout_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Cutout Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ArchiveObservation": {
+        "properties": {
+          "observation_id": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{16,64}$",
+            "title": "Observation Id"
+          },
+          "source_product_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Product Id"
+          },
+          "source_url": {
+            "type": "string",
+            "title": "Source Url"
+          },
+          "collection": {
+            "type": "string",
+            "enum": [
+              "spherex_qr2",
+              "spherex_qr3"
+            ],
+            "title": "Collection"
+          },
+          "mjd_start": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mjd Start"
+          },
+          "mjd_end": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mjd End"
+          },
+          "wavelength_min_m": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Wavelength Min M"
+          },
+          "wavelength_max_m": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Wavelength Max M"
+          }
+        },
+        "additionalProperties": true,
+        "type": "object",
+        "required": [
+          "observation_id",
+          "source_product_id",
+          "source_url",
+          "collection"
+        ],
+        "title": "ArchiveObservation",
+        "description": "The wavelength bounds describe product coverage, not a source's band."
+      },
+      "Assets": {
+        "properties": {
+          "original_fits_url": {
+            "type": "string",
+            "title": "Original Fits Url"
+          },
+          "preview_png_url": {
+            "type": "string",
+            "title": "Preview Png Url"
+          },
+          "sha256": {
+            "type": "string",
+            "title": "Sha256"
+          },
+          "byte_count": {
+            "type": "integer",
+            "title": "Byte Count"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "original_fits_url",
+          "preview_png_url",
+          "sha256",
+          "byte_count"
+        ],
+        "title": "Assets"
+      },
+      "DisplayInfo": {
+        "properties": {
+          "mode": {
+            "type": "string",
+            "const": "per_image_asinh",
+            "title": "Mode"
+          },
+          "percentile_low": {
+            "type": "integer",
+            "title": "Percentile Low"
+          },
+          "percentile_high": {
+            "type": "integer",
+            "title": "Percentile High"
+          },
+          "value_low": {
+            "type": "number",
+            "title": "Value Low"
+          },
+          "value_high": {
+            "type": "number",
+            "title": "Value High"
+          },
+          "origin": {
+            "type": "string",
+            "const": "lower",
+            "title": "Origin"
+          },
+          "nonfinite_pixels_displayed_as": {
+            "type": "integer",
+            "title": "Nonfinite Pixels Displayed As"
+          },
+          "brightness_comparison_validated": {
+            "type": "boolean",
+            "const": false,
+            "title": "Brightness Comparison Validated"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "mode",
+          "percentile_low",
+          "percentile_high",
+          "value_low",
+          "value_high",
+          "origin",
+          "nonfinite_pixels_displayed_as",
+          "brightness_comparison_validated"
+        ],
+        "title": "DisplayInfo"
+      },
+      "ExtensionInfo": {
+        "properties": {
+          "index": {
+            "type": "integer",
+            "title": "Index"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "kind": {
+            "type": "string",
+            "title": "Kind"
+          },
+          "shape": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "integer"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Shape"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "index",
+          "name",
+          "kind",
+          "shape"
+        ],
+        "title": "ExtensionInfo"
+      },
+      "FlagCount": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "bit": {
+            "type": "integer",
+            "title": "Bit"
+          },
+          "count": {
+            "type": "integer",
+            "title": "Count"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "name",
+          "bit",
+          "count",
+          "description"
+        ],
+        "title": "FlagCount"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "ImageInfo": {
+        "properties": {
+          "width": {
+            "type": "integer",
+            "title": "Width"
+          },
+          "height": {
+            "type": "integer",
+            "title": "Height"
+          },
+          "unit": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Unit"
+          },
+          "image_extension": {
+            "type": "string",
+            "const": "IMAGE",
+            "title": "Image Extension"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "width",
+          "height",
+          "unit",
+          "image_extension"
+        ],
+        "title": "ImageInfo"
+      },
+      "Inspection": {
+        "properties": {
+          "image": {
+            "$ref": "#/components/schemas/ImageInfo"
+          },
+          "observation_time": {
+            "$ref": "#/components/schemas/ObservationTime"
+          },
+          "spatial": {
+            "$ref": "#/components/schemas/SpatialInfo"
+          },
+          "wavelength": {
+            "$ref": "#/components/schemas/WavelengthInfo"
+          },
+          "quality": {
+            "$ref": "#/components/schemas/QualityInfo"
+          },
+          "extensions": {
+            "items": {
+              "$ref": "#/components/schemas/ExtensionInfo"
+            },
+            "type": "array",
+            "title": "Extensions"
+          },
+          "display": {
+            "$ref": "#/components/schemas/DisplayInfo"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "image",
+          "observation_time",
+          "spatial",
+          "wavelength",
+          "quality",
+          "extensions",
+          "display",
+          "warnings"
+        ],
+        "title": "Inspection"
+      },
+      "ObservationTime": {
+        "properties": {
+          "date_obs": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Date Obs"
+          },
+          "date_end": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Date End"
+          },
+          "source_field": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Field"
+          },
+          "end_source_field": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "End Source Field"
+          },
+          "time_system": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Time System"
+          },
+          "time_system_source_field": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Time System Source Field"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "header_value",
+              "not_assessed"
+            ],
+            "title": "Status"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "date_obs",
+          "date_end",
+          "source_field",
+          "end_source_field",
+          "time_system",
+          "time_system_source_field",
+          "status"
+        ],
+        "title": "ObservationTime"
+      },
+      "Position": {
+        "properties": {
+          "ra_deg": {
+            "type": "number",
+            "exclusiveMaximum": 360.0,
+            "minimum": 0.0,
+            "title": "Ra Deg",
+            "description": "ICRS fixed sky direction, degrees"
+          },
+          "dec_deg": {
+            "type": "number",
+            "maximum": 90.0,
+            "minimum": -90.0,
+            "title": "Dec Deg",
+            "description": "ICRS fixed sky direction, degrees"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "ra_deg",
+          "dec_deg"
+        ],
+        "title": "Position"
+      },
+      "PrepareRequest": {
+        "properties": {
+          "observation_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 1,
+            "title": "Observation Ids"
+          },
+          "size_deg": {
+            "type": "number",
+            "maximum": 0.1,
+            "minimum": 0.005,
+            "title": "Size Deg",
+            "default": 0.03
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "observation_ids"
+        ],
+        "title": "PrepareRequest"
+      },
+      "PreparedObservation": {
+        "properties": {
+          "schema_version": {
+            "type": "string",
+            "const": "0.1",
+            "title": "Schema Version",
+            "default": "0.1"
+          },
+          "cutout_id": {
+            "type": "string",
+            "title": "Cutout Id"
+          },
+          "search_id": {
+            "type": "string",
+            "title": "Search Id"
+          },
+          "query_position": {
+            "$ref": "#/components/schemas/Position"
+          },
+          "size_deg": {
+            "type": "number",
+            "title": "Size Deg"
+          },
+          "source": {
+            "$ref": "#/components/schemas/ArchiveObservation"
+          },
+          "retrieval": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Retrieval"
+          },
+          "inspection": {
+            "$ref": "#/components/schemas/Inspection",
+            "description": "Measured FITS image, time, WCS, wavelength and raw-flag summaries. See data-format.md."
+          },
+          "assets": {
+            "$ref": "#/components/schemas/Assets"
+          },
+          "comparison_status": {
+            "type": "string",
+            "const": "not_assessed",
+            "title": "Comparison Status",
+            "default": "not_assessed"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Limitations"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "cutout_id",
+          "search_id",
+          "query_position",
+          "size_deg",
+          "source",
+          "retrieval",
+          "inspection",
+          "assets"
+        ],
+        "title": "PreparedObservation"
+      },
+      "QualityInfo": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "const": "not_assessed",
+            "title": "Status"
+          },
+          "nonfinite_fraction": {
+            "type": "number",
+            "title": "Nonfinite Fraction"
+          },
+          "flags_present": {
+            "type": "boolean",
+            "title": "Flags Present"
+          },
+          "nonzero_flag_fraction": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Nonzero Flag Fraction"
+          },
+          "flag_counts": {
+            "items": {
+              "$ref": "#/components/schemas/FlagCount"
+            },
+            "type": "array",
+            "title": "Flag Counts"
+          },
+          "variance": {
+            "$ref": "#/components/schemas/VarianceInfo"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "status",
+          "nonfinite_fraction",
+          "flags_present",
+          "nonzero_flag_fraction",
+          "flag_counts",
+          "variance"
+        ],
+        "title": "QualityInfo"
+      },
+      "SearchRecord": {
+        "properties": {
+          "schema_version": {
+            "type": "string",
+            "const": "0.1",
+            "title": "Schema Version",
+            "default": "0.1"
+          },
+          "search_id": {
+            "type": "string",
+            "title": "Search Id"
+          },
+          "query": {
+            "$ref": "#/components/schemas/SearchRequest"
+          },
+          "query_url": {
+            "type": "string",
+            "title": "Query Url"
+          },
+          "queried_at_utc": {
+            "type": "string",
+            "title": "Queried At Utc"
+          },
+          "truncated": {
+            "type": "boolean",
+            "title": "Truncated"
+          },
+          "observations": {
+            "items": {
+              "$ref": "#/components/schemas/ArchiveObservation"
+            },
+            "type": "array",
+            "title": "Observations"
+          },
+          "total_rows": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total Rows"
+          },
+          "interpretation": {
+            "type": "string",
+            "title": "Interpretation",
+            "default": "Footprints overlap a fixed sky direction. Object identity, usable pixels, same-wavelength coverage and temporal comparability need inspection."
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "search_id",
+          "query",
+          "query_url",
+          "queried_at_utc",
+          "truncated",
+          "observations"
+        ],
+        "title": "SearchRecord"
+      },
+      "SearchRequest": {
+        "properties": {
+          "ra_deg": {
+            "type": "number",
+            "exclusiveMaximum": 360.0,
+            "minimum": 0.0,
+            "title": "Ra Deg",
+            "description": "ICRS fixed sky direction, degrees"
+          },
+          "dec_deg": {
+            "type": "number",
+            "maximum": 90.0,
+            "minimum": -90.0,
+            "title": "Dec Deg",
+            "description": "ICRS fixed sky direction, degrees"
+          },
+          "radius_deg": {
+            "type": "number",
+            "maximum": 0.05,
+            "minimum": 0.0001,
+            "title": "Radius Deg",
+            "default": 0.01
+          },
+          "collection": {
+            "type": "string",
+            "enum": [
+              "spherex_qr2",
+              "spherex_qr3"
+            ],
+            "title": "Collection",
+            "default": "spherex_qr3"
+          },
+          "limit": {
+            "type": "integer",
+            "maximum": 500.0,
+            "minimum": 1.0,
+            "title": "Limit",
+            "default": 100
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "ra_deg",
+          "dec_deg"
+        ],
+        "title": "SearchRequest"
+      },
+      "SpatialInfo": {
+        "properties": {
+          "has_celestial_wcs": {
+            "type": "boolean",
+            "title": "Has Celestial Wcs"
+          },
+          "query_pixel_x": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Query Pixel X"
+          },
+          "query_pixel_y": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Query Pixel Y"
+          },
+          "query_position_within_cutout": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Query Position Within Cutout"
+          },
+          "alignment_status": {
+            "type": "string",
+            "const": "not_assessed",
+            "title": "Alignment Status"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "has_celestial_wcs",
+          "query_pixel_x",
+          "query_pixel_y",
+          "query_position_within_cutout",
+          "alignment_status"
+        ],
+        "title": "SpatialInfo"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      },
+      "VarianceInfo": {
+        "properties": {
+          "present": {
+            "type": "boolean",
+            "title": "Present"
+          },
+          "unit": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Unit"
+          },
+          "nonfinite_fraction": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Nonfinite Fraction"
+          },
+          "negative_fraction": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Negative Fraction"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "present",
+          "unit",
+          "nonfinite_fraction",
+          "negative_fraction"
+        ],
+        "title": "VarianceInfo"
+      },
+      "WavelengthInfo": {
+        "properties": {
+          "target_center_um": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Target Center Um"
+          },
+          "target_bandwidth_um": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Target Bandwidth Um"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "not_assessed",
+              "spectral_wcs_evaluated"
+            ],
+            "title": "Status"
+          },
+          "reason": {
+            "type": "string",
+            "title": "Reason"
+          },
+          "position_basis": {
+            "type": "string",
+            "const": "fixed_query_position",
+            "title": "Position Basis"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "target_center_um",
+          "target_bandwidth_um",
+          "status",
+          "reason",
+          "position_basis"
+        ],
+        "title": "WavelengthInfo"
+      }
+    }
+  }
+}

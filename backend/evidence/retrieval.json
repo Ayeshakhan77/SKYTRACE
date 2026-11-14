@@ -1,0 +1,303 @@
+{
+  "executed_at_utc": "2026-11-03T12:04:11+00:00",
+  "target": {
+    "name": "WISE 0855",
+    "ra_deg": 133.7951291667,
+    "dec_deg": -7.2451472222,
+    "coordinate_source": "https://www.spaceappschallenge.org/2026/challenges/planet-x-and-spherex/",
+    "coordinate_text": "RA 08h55m10.831s, Dec -7d14m42.53s",
+    "position_interpretation": "Fixed challenge coordinates; object identification and proper-motion propagation not performed."
+  },
+  "query_radius_deg": 0.01,
+  "cutout_size_deg": 0.03,
+  "searches": [
+    {
+      "query_url": "https://irsa.ipac.caltech.edu/SIA?COLLECTION=spherex_qr3&POS=circle+133.7951291667+-7.2451472222+0.01&RESPONSEFORMAT=VOTABLE",
+      "queried_at_utc": "2026-11-03T11:58:18+00:00",
+      "timestamp_basis": "Successful raw response capture file modification time, not request start time.",
+      "total_rows": 0,
+      "truncated": false,
+      "upstream_truncated": false,
+      "collection": "spherex_qr3",
+      "raw_metadata_path": "initial-query-response.xml"
+    },
+    {
+      "query_url": "https://irsa.ipac.caltech.edu/SIA?COLLECTION=spherex_qr2&POS=circle+133.7951291667+-7.2451472222+0.01&RESPONSEFORMAT=VOTABLE",
+      "queried_at_utc": "2026-11-03T11:59:39+00:00",
+      "timestamp_basis": "Successful raw response capture file modification time, not request start time.",
+      "total_rows": 256,
+      "truncated": false,
+      "upstream_truncated": false,
+      "collection": "spherex_qr2",
+      "raw_metadata_path": "qr2-query-response.xml"
+    }
+  ],
+  "downloaded_observations": [
+    {
+      "observation": {
+        "observation_id": "7f169ac45d22df30c60dd4ef",
+        "source_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2025W19_1B/l2b-v20-2025-242/1/level2_2025W19_1B_0241_1D1_spx_l2b-v20-2025-242.fits",
+        "source_product_id": "ivo://irsa.ipac/spherex_qr2?2025W19_1B_0241_1/D1",
+        "collection": "spherex_qr2",
+        "mjd_start": 60801.514177,
+        "mjd_end": 60801.515509,
+        "wavelength_min_m": 7.455e-07,
+        "wavelength_max_m": 1.1167e-06,
+        "bandpass_name": "SPHEREx-D1",
+        "metadata": {
+          "s_ra": 133.42536620424912,
+          "s_dec": -7.945312368704557,
+          "facility_name": "SPHEREx",
+          "instrument_name": "SPHEREx",
+          "dataproduct_subtype": "science",
+          "calib_level": 2,
+          "dataproduct_type": "image",
+          "energy_bandpassname": "SPHEREx-D1",
+          "energy_emband": "Infrared",
+          "obs_id": "2025W19_1B_0241_1",
+          "s_resolution": 3.075,
+          "em_min": 7.455e-07,
+          "em_max": 1.1167e-06,
+          "em_res_power": 39.1,
+          "proposal_title": "SPHEREx LVF Survey Data",
+          "access_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2025W19_1B/l2b-v20-2025-242/1/level2_2025W19_1B_0241_1D1_spx_l2b-v20-2025-242.fits",
+          "access_format": "image/fits",
+          "access_estsize": 71635,
+          "t_exptime": 113.5826,
+          "s_region": "POLYGON ICRS 132.37573519629933 -5.774333126514086 135.6943697985972 -6.870953214874186 134.4801700066058 -10.141421258440374 131.10809219498404 -9.030146774442066 132.37573519629933 -5.774333126514086",
+          "obs_collection": "spherex_qr2",
+          "obs_intent": "science",
+          "algorithm_name": "exposure",
+          "facility_keywords": "",
+          "instrument_keywords": "",
+          "environment_photometric": null,
+          "proposal_id": "",
+          "proposal_pi": "",
+          "proposal_project": "SPHEREx",
+          "target_name": "SPS_119426",
+          "target_type": "field",
+          "target_standard": false,
+          "target_moving": false,
+          "target_keywords": "",
+          "obs_release_date": "2025-10-17 04:59:26",
+          "s_xel1": 2040,
+          "s_xel2": 2040,
+          "s_pixel_scale": 6.15,
+          "position_timedependent": false,
+          "t_min": 60801.514177,
+          "t_max": 60801.515509,
+          "t_resolution": null,
+          "t_xel": null,
+          "obs_publisher_did": "ivo://irsa.ipac/spherex_qr2?2025W19_1B_0241_1/D1",
+          "s_fov": 3.485,
+          "em_xel": null,
+          "pol_states": "",
+          "pol_xel": null,
+          "cloud_access": "{\"aws\": {\"bucket_name\": \"nasa-irsa-spherex\", \"key\":\"qr2/level2/2025W19_1B/l2b-v20-2025-242/1/level2_2025W19_1B_0241_1D1_spx_l2b-v20-2025-242.fits\", \"region\": \"us-east-1\"}}",
+          "o_ucd": "",
+          "upload_row_id": 1
+        }
+      },
+      "download": {
+        "url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2025W19_1B/l2b-v20-2025-242/1/level2_2025W19_1B_0241_1D1_spx_l2b-v20-2025-242.fits?center=133.7951291667%2C-7.2451472222&size=0.030000",
+        "byte_count": 5060160,
+        "sha256": "822f99bfc107a86453f522ae52352a5c61bc85c0a03ea9c9041c913db1d3bf51",
+        "retrieved_at_utc": "2026-11-03T12:04:40+00:00"
+      },
+      "hdu_summary": [
+        {
+          "name": "PRIMARY",
+          "shape": null
+        },
+        {
+          "name": "IMAGE",
+          "shape": [
+            18,
+            18
+          ]
+        },
+        {
+          "name": "FLAGS",
+          "shape": [
+            18,
+            18
+          ]
+        },
+        {
+          "name": "VARIANCE",
+          "shape": [
+            18,
+            18
+          ]
+        },
+        {
+          "name": "ZODI",
+          "shape": [
+            18,
+            18
+          ]
+        },
+        {
+          "name": "PSF",
+          "shape": [
+            121,
+            101,
+            101
+          ]
+        },
+        {
+          "name": "WCS-WAVE",
+          "shape": [
+            1
+          ]
+        }
+      ],
+      "image_header_summary": {
+        "DATE-OBS": "2025-05-06T12:20:24.888",
+        "MJD-OBS": 60801.514176944,
+        "DETECTOR": 1,
+        "BUNIT": "MJy / sr",
+        "CTYPE1": "RA---TAN-SIP",
+        "CTYPE2": "DEC--TAN-SIP"
+      },
+      "bundled_source_note": "See examples/observations.json and examples/cache/cutouts for source bytes and preview."
+    },
+    {
+      "observation": {
+        "observation_id": "1a005be8a9d9ddcb7e5f9555",
+        "source_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2026W19_1A/l2b-v24-2026-131/1/level2_2026W19_1A_0594_2D1_spx_l2b-v24-2026-131.fits",
+        "source_product_id": "ivo://irsa.ipac/spherex_qr2?2026W19_1A_0594_2/D1",
+        "collection": "spherex_qr2",
+        "mjd_start": 61165.590143,
+        "mjd_end": 61165.591475,
+        "wavelength_min_m": 7.455e-07,
+        "wavelength_max_m": 1.1167e-06,
+        "bandpass_name": "SPHEREx-D1",
+        "metadata": {
+          "s_ra": 134.14935753972202,
+          "s_dec": -7.899854778357191,
+          "facility_name": "SPHEREx",
+          "instrument_name": "SPHEREx",
+          "dataproduct_subtype": "science",
+          "calib_level": 2,
+          "dataproduct_type": "image",
+          "energy_bandpassname": "SPHEREx-D1",
+          "energy_emband": "Infrared",
+          "obs_id": "2026W19_1A_0594_2",
+          "s_resolution": 3.075,
+          "em_min": 7.455e-07,
+          "em_max": 1.1167e-06,
+          "em_res_power": 39.1,
+          "proposal_title": "SPHEREx LVF Survey Data",
+          "access_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2026W19_1A/l2b-v24-2026-131/1/level2_2026W19_1A_0594_2D1_spx_l2b-v24-2026-131.fits",
+          "access_format": "image/fits",
+          "access_estsize": 71638,
+          "t_exptime": 113.5826,
+          "s_region": "POLYGON ICRS 133.1067013398072 -5.725597879920737 136.42160254148538 -6.832517096694966 135.19697485994277 -10.099229954401133 131.82885928308713 -8.977451662484015 133.1067013398072 -5.725597879920737",
+          "obs_collection": "spherex_qr2",
+          "obs_intent": "science",
+          "algorithm_name": "exposure",
+          "facility_keywords": "",
+          "instrument_keywords": "",
+          "environment_photometric": null,
+          "proposal_id": "",
+          "proposal_pi": "",
+          "proposal_project": "SPHEREx",
+          "target_name": "SPS_117707",
+          "target_type": "field",
+          "target_standard": false,
+          "target_moving": false,
+          "target_keywords": "",
+          "obs_release_date": "2026-06-15 20:39:04",
+          "s_xel1": 2040,
+          "s_xel2": 2040,
+          "s_pixel_scale": 6.15,
+          "position_timedependent": false,
+          "t_min": 61165.590143,
+          "t_max": 61165.591475,
+          "t_resolution": null,
+          "t_xel": null,
+          "obs_publisher_did": "ivo://irsa.ipac/spherex_qr2?2026W19_1A_0594_2/D1",
+          "s_fov": 3.485,
+          "em_xel": null,
+          "pol_states": "",
+          "pol_xel": null,
+          "cloud_access": "{\"aws\": {\"bucket_name\": \"nasa-irsa-spherex\", \"key\":\"qr2/level2/2026W19_1A/l2b-v24-2026-131/1/level2_2026W19_1A_0594_2D1_spx_l2b-v24-2026-131.fits\", \"region\": \"us-east-1\"}}",
+          "o_ucd": "",
+          "upload_row_id": 1
+        }
+      },
+      "download": {
+        "url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2026W19_1A/l2b-v24-2026-131/1/level2_2026W19_1A_0594_2D1_spx_l2b-v24-2026-131.fits?center=133.7951291667%2C-7.2451472222&size=0.030000",
+        "byte_count": 5063040,
+        "sha256": "f9b27c04d5d00169b4f3dfb16a3720793fa4cef6818b2f3f62bb9e95a351bc76",
+        "retrieved_at_utc": "2026-11-03T12:05:04+00:00"
+      },
+      "hdu_summary": [
+        {
+          "name": "PRIMARY",
+          "shape": null
+        },
+        {
+          "name": "IMAGE",
+          "shape": [
+            18,
+            18
+          ]
+        },
+        {
+          "name": "FLAGS",
+          "shape": [
+            18,
+            18
+          ]
+        },
+        {
+          "name": "VARIANCE",
+          "shape": [
+            18,
+            18
+          ]
+        },
+        {
+          "name": "ZODI",
+          "shape": [
+            18,
+            18
+          ]
+        },
+        {
+          "name": "PSF",
+          "shape": [
+            121,
+            101,
+            101
+          ]
+        },
+        {
+          "name": "WCS-WAVE",
+          "shape": [
+            1
+          ]
+        }
+      ],
+      "image_header_summary": {
+        "DATE-OBS": "2026-05-05T14:09:48.337",
+        "MJD-OBS": 61165.590142789,
+        "DETECTOR": 1,
+        "BUNIT": "MJy / sr",
+        "CTYPE1": "RA---TAN-SIP",
+        "CTYPE2": "DEC--TAN-SIP"
+      },
+      "bundled_source_note": "See examples/observations.json and examples/cache/cutouts for source bytes and preview."
+    }
+  ],
+  "comparison_status": "not_assessed",
+  "limitations": [
+    "A metadata match means the image footprint overlaps the query circle, not a confirmed detection of WISE 0855.",
+    "Shared detector label does not establish equal wavelength at the target; SPHEREx wavelength varies across pixels.",
+    "Alignment, proper motion, calibration compatibility and scientific change detection are not assessed by this retrieval script."
+  ],
+  "status": "retrieved",
+  "selection_basis": "First/last MJD of one detector within one collection; not a validated same-wavelength temporal pair."
+}

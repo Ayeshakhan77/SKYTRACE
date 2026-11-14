@@ -1,0 +1,7 @@
+{
+  "search_status": 200,
+  "cutouts_status": 200,
+  "assets_verified": 1,
+  "live_archive_requests": true,
+  "separate_two_cutout_request_failed": "http-cutouts-response.json"
+}

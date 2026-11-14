@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skytrace-backend"
+version = "0.1.0"
+description = "Local SPHEREx retrieval and preview prototype for SpaceLensers"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi==0.162.0", "uvicorn==0.54.0", "httpx==0.28.1",
+  "astropy==8.0.2", "numpy==2.5.4", "pillow==13.0.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest==9.2.0"]
+
+[tool.setuptools.packages.find]
+include = ["skytrace*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

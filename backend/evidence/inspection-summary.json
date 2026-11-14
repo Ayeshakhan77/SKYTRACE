@@ -1,0 +1,110 @@
+[
+  {
+    "id": "7f169ac45d22df30c60dd4ef",
+    "date": "2025-05-06T12:20:24.888",
+    "image": {
+      "width": 18,
+      "height": 18,
+      "unit": "MJy / sr",
+      "image_extension": "IMAGE"
+    },
+    "wavelength": {
+      "target_center_um": 0.9936670117685139,
+      "target_bandwidth_um": 0.026386620568176006,
+      "status": "spectral_wcs_evaluated",
+      "reason": "WCS W evaluated at the fixed query position, using declared axis units.",
+      "position_basis": "fixed_query_position"
+    },
+    "query_inside": true,
+    "nonfinite_fraction": 0.0,
+    "flags": [
+      {
+        "name": "MP_TRANSIENT",
+        "bit": 0,
+        "count": 1,
+        "description": "Transient detected during SUR"
+      },
+      {
+        "name": "MP_OUTLIER",
+        "bit": 19,
+        "count": 5,
+        "description": "Pixel flagged by Detect Outliers"
+      },
+      {
+        "name": "MP_SOURCE",
+        "bit": 21,
+        "count": 103,
+        "description": "Pixel mapped to a known source"
+      }
+    ]
+  },
+  {
+    "id": "1a005be8a9d9ddcb7e5f9555",
+    "date": "2026-05-05T14:09:48.337",
+    "image": {
+      "width": 18,
+      "height": 18,
+      "unit": "MJy / sr",
+      "image_extension": "IMAGE"
+    },
+    "wavelength": {
+      "target_center_um": 0.9629694281374138,
+      "target_bandwidth_um": 0.02471831065589413,
+      "status": "spectral_wcs_evaluated",
+      "reason": "WCS W evaluated at the fixed query position, using declared axis units.",
+      "position_basis": "fixed_query_position"
+    },
+    "query_inside": true,
+    "nonfinite_fraction": 0.0,
+    "flags": [
+      {
+        "name": "MP_TRANSIENT",
+        "bit": 0,
+        "count": 2,
+        "description": "Transient detected during SUR"
+      },
+      {
+        "name": "MP_SUR_ERROR",
+        "bit": 2,
+        "count": 2,
+        "description": "Error in onboard processing"
+      },
+      {
+        "name": "MP_NONFUNC",
+        "bit": 6,
+        "count": 2,
+        "description": "Permanently unusable"
+      },
+      {
+        "name": "MP_COLD",
+        "bit": 11,
+        "count": 1,
+        "description": "Anomalously low signal"
+      },
+      {
+        "name": "MP_PERSIST",
+        "bit": 17,
+        "count": 1,
+        "description": "Persistent charge above threshold"
+      },
+      {
+        "name": "MP_OUTLIER",
+        "bit": 19,
+        "count": 8,
+        "description": "Pixel flagged by Detect Outliers"
+      },
+      {
+        "name": "MP_SOURCE",
+        "bit": 21,
+        "count": 116,
+        "description": "Pixel mapped to a known source"
+      },
+      {
+        "name": "MP_HALO",
+        "bit": 28,
+        "count": 6,
+        "description": "Pixel part of a transient halo"
+      }
+    ]
+  }
+]
