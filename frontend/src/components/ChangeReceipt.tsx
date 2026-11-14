@@ -96,7 +96,7 @@ export default function ChangeReceipt({
             SKYTRACE Change Receipt & Provenance Ledger
           </h2>
           <p className="text-xs text-gray-400">
-            Transparent audit record distinguishing visual exploration from scientifically validated findings[cite: 2].
+            Transparent audit record distinguishing visual exploration from scientifically validated findings.
           </p>
         </div>
 
@@ -239,7 +239,7 @@ export default function ChangeReceipt({
             E. SCIENTIFIC VALIDATION CHECKS
           </h3>
           <span className="text-[11px] font-mono text-gray-400">
-            Unassessed checks are explicitly preserved—never marked as passed[cite: 2].
+            Unassessed checks are explicitly preserved—never marked as passed.
           </span>
         </div>
 
@@ -281,13 +281,13 @@ export default function ChangeReceipt({
           </h3>
           <ul className="space-y-2 text-xs text-gray-300 list-disc pl-4">
             <li>
-              <strong>Visual Exploration:</strong> Multi-epoch SPHEREx cutouts were retrieved and inspected chronologically via {receipt.comparisonMode.replace('_', ' ')} mode[cite: 2].
+              <strong>Visual Exploration:</strong> Multi-epoch SPHEREx cutouts were retrieved and inspected chronologically via {receipt.comparisonMode.replace('_', ' ')} mode.
             </li>
             <li>
-              <strong>Validated Scientific Findings:</strong> None yet. No scientifically validated difference product exists for this selection[cite: 2].
+              <strong>Validated Scientific Findings:</strong> None yet. No scientifically validated difference product exists for this selection.
             </li>
             <li>
-              <strong>Candidate Status:</strong> Any apparent visual variation remains an unverified candidate subject to instrumental and wavelength differences[cite: 2].
+              <strong>Candidate Status:</strong> Any apparent visual variation remains an unverified candidate subject to instrumental and wavelength differences.
             </li>
           </ul>
         </div>
@@ -298,16 +298,16 @@ export default function ChangeReceipt({
           </h3>
           <ul className="space-y-2 text-xs text-gray-300 list-disc pl-4">
             <li>
-              <strong>Fixed-Coordinate Search:</strong> Searching a sky position does not establish object identity or confirm proper motion[cite: 2].
+              <strong>Fixed-Coordinate Search:</strong> Searching a sky position does not establish object identity or confirm proper motion.
             </li>
             <li>
-              <strong>Per-Image Scaling:</strong> Preview images use independent display scaling and cannot support numerical brightness comparisons[cite: 2].
+              <strong>Per-Image Scaling:</strong> Preview images use independent display scaling and cannot support numerical brightness comparisons.
             </li>
             <li>
-              <strong>Band & Calibration Differences:</strong> Visual differences may arise from wavelength, detector, calibration, or WCS alignment offsets[cite: 2].
+              <strong>Band & Calibration Differences:</strong> Visual differences may arise from wavelength, detector, calibration, or WCS alignment offsets.
             </li>
             <li>
-              <strong>No Discovery Claim:</strong> A visual candidate is not a confirmed astronomical discovery[cite: 2].
+              <strong>No Discovery Claim:</strong> A visual candidate is not a confirmed astronomical discovery.
             </li>
           </ul>
         </div>

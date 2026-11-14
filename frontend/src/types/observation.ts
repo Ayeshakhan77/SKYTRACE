@@ -32,6 +32,27 @@ export interface NormalizedObservation {
   fitsStatus: AssetAvailability;
   provenance: ObservationProvenance;
   qualityStatus: ValidationStatus;
+
+  // --- Fields added to match the real backend (bruhadev/skytrace-viewer-integration) ---
+  // Prepared cutout ID (only present after POST /v1/searches/{id}/cutouts)
+  cutoutId?: string;
+  // Where `wavelength` came from: the local spectral WCS at the query position
+  // (prepared cutouts) or absent. Search rows only carry the broad product range.
+  wavelengthBasis?: 'spectral_wcs_at_query_position' | 'unavailable';
+  // Broad product wavelength range from archive metadata, converted m -> µm
+  wavelengthRangeUm?: { min: number; max: number };
+  // Raw fraction of pixels with any FLAGS bit set (not a bad-pixel percentage)
+  nonzeroFlagFraction?: number;
+  // Whether the query position falls inside the cutout footprint
+  queryPositionInCutout?: boolean;
+  alignmentStatus?: ValidationStatus;
+  comparisonStatus?: ValidationStatus;
+  // e.g. 'per_image_asinh' — per-image stretch means brightness can't be compared
+  displayMode?: string;
+  brightnessComparisonValidated?: boolean;
+  imageSize?: { width: number; height: number; unit?: string };
+  warnings?: string[];
+  limitations?: string[];
 }
 
 export interface TargetPreset {

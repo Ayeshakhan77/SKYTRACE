@@ -271,6 +271,13 @@ export default function QueryConsole({ onObservationsPrepared }: QueryConsolePro
         </div>
       )}
 
+      {searchId && !isSearching && !errorMsg && results.length === 0 && (
+        <div className="p-4 rounded-xl bg-cardBg border border-borderCol text-xs font-mono text-gray-300">
+          No SPHEREx observations found at this position in the searched collection. Try a larger
+          radius (max 0.05°) or another target. An empty result is not evidence that an object is absent.
+        </div>
+      )}
+
       {/* Search Results & Selection List */}
       {results.length > 0 && (
         <div className="bg-cardBg border border-borderCol rounded-xl p-5 space-y-4">

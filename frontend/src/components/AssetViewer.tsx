@@ -109,8 +109,12 @@ export default function AssetViewer({
             style={{
               transform: `scale(${zoom})`,
               filter: invertColor ? 'invert(1) hue-rotate(180deg)' : 'none',
+              // SPHEREx cutouts are tiny (e.g. 18×18 px at ~6″/px). Upscale to fill the
+              // frame with nearest-neighbour so each real pixel stays a crisp block and
+              // the browser doesn't smooth in detail that isn't in the data.
+              imageRendering: 'pixelated',
             }}
-            className="max-h-full max-w-full object-contain transition-transform duration-150 select-none"
+            className="h-full w-full object-contain transition-transform duration-150 select-none"
           />
         ) : (
           <div className="text-center p-6 space-y-2">
