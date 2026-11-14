@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101a22">
+    <title>SKYTRACE — SPHEREx viewer</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="SKYTRACE home">
+        <span class="brand-mark" aria-hidden="true">✳</span>
+        <span>SKYTRACE</span>
+      </a>
+      <span class="topbar-label">SPHEREx archive explorer</span>
+      <span id="connection-pill" class="connection-pill" role="status">Connecting…</span>
+    </header>
+
+    <main class="layout">
+      <section class="intro">
+        <p class="eyebrow">NASA / IPAC · IRSA</p>
+        <h1>Explore the sky<br><span>one observation at a time.</span></h1>
+        <p class="intro-copy">Search SPHEREx image products around a fixed sky position, prepare a small cutout, and inspect its source data and provenance.</p>
+      </section>
+
+      <section class="panel search-panel" aria-labelledby="search-title">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">01 / Search</p>
+            <h2 id="search-title">Choose a sky position</h2>
+          </div>
+          <span id="target-count" class="subtle">Loading presets…</span>
+        </div>
+
+        <form id="search-form">
+          <label class="field full">
+            <span>Target preset</span>
+            <select id="target-select" aria-describedby="preset-note">
+              <option value="">Loading available targets…</option>
+            </select>
+          </label>
+          <p id="preset-note" class="field-note full">Presets are supplied by the backend. The available coordinates are fixed query positions; they do not confirm an object detection.</p>
+
+          <label class="field">
+            <span>Right ascension <small>degrees</small></span>
+            <input id="ra-input" name="ra_deg" type="number" min="0" max="359.999999" step="any" value="133.7951291667" required>
+          </label>
+          <label class="field">
+            <span>Declination <small>degrees</small></span>
+            <input id="dec-input" name="dec_deg" type="number" min="-90" max="90" step="any" value="-7.2451472222" required>
+          </label>
+          <label class="field">
+            <span>Archive collection</span>
+            <select id="collection-select" name="collection">
+              <option value="spherex_qr2" selected>QR2 · known WISE 0855 results</option>
+              <option value="spherex_qr3">QR3 · latest release</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Search radius <small>degrees</small></span>
+            <input id="radius-input" name="radius_deg" type="number" min="0.0001" max="0.05" step="0.001" value="0.01" required>
+          </label>
+          <div class="form-actions full">
+            <p id="search-error" class="error-text" role="alert" hidden></p>
+            <button id="search-button" class="button primary" type="submit">Search archive <span aria-hidden="true">↗</span></button>
+          </div>
+        </form>
+      </section>
+
+      <section id="results-panel" class="panel results-panel" aria-labelledby="results-title" hidden>
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">02 / Select</p>
+            <h2 id="results-title">Archive observations</h2>
+          </div>
+          <span id="result-count" class="subtle"></span>
+        </div>
+        <p class="field-note">A matching footprint is not proof that the named target appears in the image. Select one observation for a preview or two for side-by-side inspection.</p>
+        <div id="results-list" class="results-list"></div>
+        <div class="selection-footer">
+          <span id="selection-count" class="subtle">0 of 2 selected</span>
+          <button id="prepare-button" class="button secondary" type="button" disabled>Prepare selected cutout(s)</button>
+        </div>
+        <p id="prepare-error" class="error-text" role="alert" hidden></p>
+      </section>
+
+      <section id="prepared-panel" class="panel prepared-panel" aria-labelledby="prepared-title" hidden>
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">03 / Inspect</p>
+            <h2 id="prepared-title">Prepared observations</h2>
+          </div>
+          <span id="comparison-state" class="status-tag">Comparison not assessed</span>
+        </div>
+        <p class="field-note">Previews are for browsing. The original FITS files remain the scientific data; no image registration, target identification, motion, or brightness-change analysis is performed here.</p>
+        <div id="prepared-list" class="prepared-list"></div>
+      </section>
+
+      <footer class="footer">
+        <span>Local prototype · source products by NASA/IPAC IRSA</span>
+        <a id="api-docs-link" href="http://127.0.0.1:8765/docs" target="_blank" rel="noreferrer">API documentation ↗</a>
+      </footer>
+    </main>
+  </body>
+</html>

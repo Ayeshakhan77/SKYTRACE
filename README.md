@@ -1,6 +1,18 @@
 # SKYTRACE
 A SPHEREx sky exploration and time-based image comparison web tool.
 
+## Local MVP
+
+The `backend/` folder contains the local IRSA search and cutout API. A lightweight
+browser viewer is in [`frontend/`](frontend/README.md). Run the API first, then
+serve the frontend on port 3000 as described there. The viewer loads target
+presets from `GET /v1/targets`; the current backend exposes only the confirmed
+WISE 0855 fixed-coordinate preset. Add the remaining preset coordinates only
+after the team supplies them.
+
+The field-by-field request/response handoff and current WISE 0855 demo-pair
+assessment are in [`frontend/API-INTEGRATION.md`](frontend/API-INTEGRATION.md).
+
 ## Backend prototype
 
 The [backend](backend/README.md) searches public NASA/IPAC IRSA SPHEREx
