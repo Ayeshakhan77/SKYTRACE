@@ -26,7 +26,7 @@ from starlette.middleware.trustedhost import TrustedHostMiddleware
 from .fits_preview import inspect_and_render
 from .irsa import IRSAError, download_cutout, search_images
 
-Collection = Literal["spherex_qr2", "spherex_qr3"]
+Collection = Literal["spherex_dr1", "spherex_qr2", "spherex_qr3"]
 DOCS_URL = "https://www.spaceappschallenge.org/2026/challenges/planet-x-and-spherex/"
 WISE_POSITION = {"ra_deg": 133.7951291667, "dec_deg": -7.2451472222}
 MAX_STORAGE_BYTES = 256 * 1024 * 1024
